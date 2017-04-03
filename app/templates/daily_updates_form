@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="RegDetails-header"><b>Daily Updates form<b></h1>
+<hr>
+<p class="text1">Please enter the patients information.</p>
+<br>
+<form action="{{url_for('doctor_add')}}" method="post">  
+	<div>
+	<label for="fname">Patient's First Name</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please enter the patient's first name</p>
+		<input type="text" id="firstname" name="first_name" size="35" required/>   
+	</div>
+	<br>
+	<div> 
+		<label for="lname">Patient's Last Name</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please enter patient's last name</p>
+		<input type="text" id="lastname" name="last_name" size="35" required/>   
+	</div>
+	<br>
+	<div> 
+		<label for="temp">Body Temperature</label>
+		<br>
+		<p class="text1">Please enter the patients body temperature in celcius</p>
+	    <input type="number" name="temp" min="1" max="200" size="15"/> 
+	<br>
+ 	<div>
+		<label for="resp">Respiration rate</label>
+		<br>
+		<p class="text1">Enter the patient's respiration rate.</p>
+		<input type = "text" size="15" id="resp" name="resp"></input><br>
+	</div>
+ 	<br>
+ 		<div>
+		<label for="pulse">Pulse</label>
+		<br>
+		<p class="text1">Enter the patient's pulse rate.</p>
+		<input type = "text" size="15" id="pulse" name="pulse"></input><br>
+	</div>
+ 	<br>
+ 	<div>
+		<label for="bloodp"> Blood Pressure</label>
+		<br>
+		<p class="text1">Enter the patient's blood pressure rate.</p>
+		<input type = "text" size="15" id="bloodp" name="bloodp"></input>
+	</div>
+ 	<br>
+ 	<div>
+		<label for="bloodp"> Medicine </label>
+		<br>
+		<p class="text1">Enter the medicine administered and dosage.</p>
+		<p class="text1">Medicine:</p><input type = "text" size="15" id="med" name="med"></input>
+		<p class="text1">Dosage: </p><input type = "text" size="15" id="meddosage" name="meddosage"></input>
+	</div>
+ 	<br>
+ 	<div>
+		<label for="bloodp"> Blood Pressure</label>
+		<br>
+		<p class="text1">Enter the patient's blood pressure rate.</p>
+		<input type = "text" size="35" id="bloodp" name="bloodp"></input>
+	</div>
+ 	<br>	
+<button type="submit" class="submit1">Submit Data</button>
+<button type="reset" class="submit1">Clear</button>  
+</form>
+{% endblock %}

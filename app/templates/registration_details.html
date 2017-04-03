@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="RegDetails-header"><b>Registration Details<b></h1>
+<hr>
+<p class="text1">Please enter the patients information.</p>
+<br>
+<form action="{{url_for('registration_details')}}" method="post">  
+	<label for="fname">First Name</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please paitents first name</p>
+		<input type="text" id="firstname" name="first_name" size="35" required/>   
+	</div>
+	<br>
+	<div> 
+		<label for="lname">Last Name</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please enter pateints last name</p>
+		<input type="text" id="lastname" name="last_name" size="35" required/>   
+	</div>
+	<br>
+	<div> 
+		<label for="age">Age</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please enter your age name</p>
+		<input type="number" id="age" name="age" min="1" max="200" required/>   
+	</div>
+	<br>
+ 	<div>
+		<label for="biography">Biography</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please enter something about you.</p>
+		<textarea id="biography" name="biography" rows="4" cols="45" required></textarea>
+	</div>
+ 	<br>
+ 	<div>
+		<label for="file">Please upload a profile image</label><span>[Required]</span>
+		<input type="file" name="file" class="form-control" />
+	</div>
+	<br>
+ 	<div>
+		<label for="gender">Please select your gender</label><span>[Required]</span><br>
+		<input type="radio" name="gender" value="male"> Male
+  		<input type="radio" name="gender" id="fgender" value="female"> Female<br>
+	</div>
+	</div>
+	<br>	
+<button type="submit" class="submit1">Register</button>
+<button type="reset" class="submit1">Clear</button>  
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="RegDetails-header"><b>Doctor's Reports<b></h1>
+<hr>
+<p class="text1">Please select the information you wish to see.</p>
+<br>
+
+<div>
+<h3 class="RegDetails-header"> Your Patients </h3>
+</div>
+<!-- {% for patient in patients %} -->
+<div class ="rox">
+    <div id="r"><p><strong>patient.first_name patient.last_name</strong></p></div>
+    <p class="other">Last updated on patient.update_date</p>
+    <div id="data">
+    <p>Diagnosises: patient.diagnosis</p>
+    <p>Contact #: patient.contact</p>
+    <p>DOB: patient.DOB</p>
+    <p>Prescribed Medication: patient.medication</p>
+    </div>
+    <div><p class ="other">Last attending nurse: patient.nurse</p>  </div>
+</div>
+<!-- {% endfor %} -->
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="RegDetails-header"><b>Medical Data Update form<b></h1>
+<hr>
+<p class="text1">Please enter the patients information.</p>
+<br>
+<form action="{{url_for('doctor_add')}}" method="post">  
+	<div>
+	<label for="fname">Patient's First Name</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please enter the patient's first name</p>
+		<input type="text" id="firstname" name="first_name" size="35" required/>   
+	</div>
+	<br>
+	<div> 
+		<label for="lname">Patient's Last Name</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please enter patient's last name</p>
+		<input type="text" id="lastname" name="last_name" size="35" required/>   
+	</div>
+	<br>
+	<div> 
+		<label for="test1">Tests Done</label>
+		<br>
+		<p class="text1">Please enter the test id</p>
+		<label for="test1" class = "text1">Test #1: </label><input type="text" name="test1" min="1" max="200" size="15"/> <label for="test1" class = "text1">Result #1: </label><input type="text" name="result1" min="1" max="200" size="35"/><br>
+		<label for="test2" class = "text1">Test #2: </label><input type="text" name="test2" min="1" max="200" size="15"/> <label for="test1" class = "text1">Result #2: </label><input type="text" name="result2" min="1" max="200" size="35"/><br>
+		<label for="test3" class = "text1">Test #3: </label><input type="text" name="test3" min="1" max="200" size="15"/> <label for="test1" class = "text1">Result #3: </label><input type="text" name="result3" min="1" max="200" size="35"/><br>
+		<label for="test4" class = "text1">Test #4: </label><input type="text" name="test4" min="1" max="200" size="15"/> <label for="test1" class = "text1">Result #4: </label><input type="text" name="result4" min="1" max="200" size="35"/><br>
+	</div>
+	<br>
+ 	<div>
+		<label for="diag">Diagnosis</label>
+		<br>
+		<p class="text1">Enter the diagnosis ID's where necessary.</p>
+		<label for="diag1" class = "text1">Diagnosis #1:<input type = "text" size="35" id="diag1" name="diag1"></input><br>
+		<label for="diag2" class = "text1">Diagnosis #2:<input type = "text" size="35" id="diag2" name="diag2"></input><br>
+		<label for="diag3" class = "text1">Diagnosis #3:<input type = "text" size="35" id="diag3" name="diag3"></input><br>
+		<label for="diag4" class = "text1">Diagnosis #4:<input type = "text" size="35" id="diag4" name="diag4"></input><br>
+	</div>
+ 	<br>
+ 		<div>
+		<label for="proc">Procedures</label>
+		<br>
+		<p class="text1">Enter the Procedure ID's where necessary.</p>
+		<label for="proc1" class = "text1">Procedure #1:<input type = "text" size="35" id="proc1" name="proc1"></input><br>
+		<label for="proc2" class = "text1">Procedure #2:<input type = "text" size="35" id="proc2" name="proc2"></input><br>
+		<label for="proc3" class = "text1">Procedure #3:<input type = "text" size="35" id="proc3" name="proc3"></input><br>
+		<label for="proc4" class = "text1">Procedure #4:<input type = "text" size="35" id="proc4" name="proc4"></input><br>
+	</div>
+ 	<br>
+ 	<div>
+		<label for="med">Prescribed Medication</label>
+		<br>
+		<p class="text1">Enter the Medication ID's where necessary.</p>
+		<label for="med1" class = "text1">Medication #1:<input type = "text" size="35" id="med1" name="med1"></input><br>
+		<label for="med2" class = "text1">Medication #2:<input type = "text" size="35" id="med2" name="med2"></input><br>
+		<label for="med3" class = "text1">Medication #3:<input type = "text" size="35" id="proc3" name="med3"></input><br>
+		<label for="med4" class = "text1">Medication #4:<input type = "text" size="35" id="med4" name="med4"></input><br>
+	</div>
+ 	<br>	
+<button type="submit" class="submit1">Submit Data</button>
+<button type="reset" class="submit1">Clear</button>  
+</form>
+{% endblock %}
