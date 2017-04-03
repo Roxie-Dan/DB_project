@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="get_info"><b>Get Information<b></h1>
+<hr>
+<p class="text1">Gets information.</p>
+<br>
+<form action="{{url_for('diagnosis')}}" method="post"> 
+<div> 
+		<label for="diagnosis"><h3>Diagnosis</h3></label>
+		<br>
+		<p class="text1">Gets the names of all patients with a certain diagnosis between the specified date range</p>
+		<br>
+		<div>
+		<label for="fname">First Name</label>
+		<br>
+		<p class="text1">Please paitents first name</p>
+		<input type="text" id="firstname" name="first_name" size="35" required/>   
+		</div>
+		<br>
+		<div> 
+			<label for="lname">Last Name</label>
+			<br>
+			<p class="text1">Please enter pateints last name</p>
+			<input type="text" id="lastname" name="last_name" size="35" required/>   
+		</div>
+		<br>
+			<p class="text1">Please enter pateints diagnosis</p>
+			<input type="text" id="diagnosis" name="diagnosis" size="35" required/>   
+		</div>
+		<br>
+		<div> 
+			<label for="date_range">Date Range</label>
+			<br>
+			<p class="text1">Please enter the date range for the diagnosis</p>
+			<label for="diagnosis">Start</label>
+			<input type="date" id="date_start" name="date_start" required/>
+			<label for="diagnosis">End</label>
+			<input type="date" id="date_end" name="date_end" required/>   
+		</div> <br>  
+		<button type="submit" class="submit1">Save</button>
+		<button type="reset" class="submit1">Clear</button> 
+</form>
+
+
+<br>  <br>  
+<form action="{{url_for('allergies')}}" method="post"> 
+<div> 
+		<label for="Allergies"><h3>Allergies</h3></label>
+		<br>
+		<p class="text1">Gets the names of all patients with a certain diagnosis between the specified date range</p>
+		<br>
+		</div>
+		<div>
+			<label for="fname">First Name</label>
+			<br>
+			<p class="text1">Please paitents first name</p>
+			<input type="text" id="firstname" name="first_name" size="35" required/>   
+		</div>
+		<br>
+		<div> 
+		<label for="lname">Last Name</label>
+		<br>
+		<p class="text1">Please enter pateints last name</p>
+		<input type="text" id="lastname" name="last_name" size="35" required/>   
+		</div><br>  
+		<button type="submit" class="submit1">Save</button> 
+		<button type="reset" class="submit1">Clear</button>  
+</form>
+
+<br>  <br>  
+<form action="{{url_for('medication')}}" method="post"> 
+<div> 
+		<label for="medication"><h3>Medication</h3></label>
+		<br>
+		<p class="text1">View the medication that most patients are allergic to</p>
+		<button type="submit" class="submit1">Get Medication</button> 
+</form>
+
+<br>  <br>  <br>
+<form action="{{url_for('results')}}" method="post"> 
+<div> 
+		<label for="results"><h3>Results</h3></label>
+		<br>
+		<p class="text1">View all test results which may include images/scans of a specific patient.</p>
+		<br>
+		</div>
+		<div>
+			<label for="fname">First Name</label>
+			<br>
+			<p class="text1">Please paitents first name</p>
+			<input type="text" id="firstname" name="first_name" size="35" required/>   
+		</div>
+		<br>
+		<div> 
+		<label for="lname">Last Name</label>
+		<br>
+		<p class="text1">Please enter pateints last name</p>
+		<input type="text" id="lastname" name="last_name" size="35" required/>   
+		</div><br>  
+		<button type="submit" class="submit1">Save</button> 
+		<button type="reset" class="submit1">Clear</button>  
+</form>
+
+<br>  <br>  <br>
+<form action="{{url_for('nurse')}}" method="post"> 
+<div> 
+		<label for="nurse"><h3>Nurse</h3></label>
+		<br>
+		<p class="text1">View all nurses who administered medication to a specific patient at a specified date.</p>
+		<br>
+		</div>
+		<div>
+			<label for="fname">First Name</label>
+			<br>
+			<p class="text1">Please paitents first name</p>
+			<input type="text" id="firstname" name="first_name" size="35" required/>   
+		</div>
+		<br>
+		<div> 
+		<label for="lname">Last Name</label>
+		<br>
+		<p class="text1">Please enter pateints last name</p>
+		<input type="text" id="lastname" name="last_name" size="35" required/>   
+		</div>
+		<br>
+		<div> 
+		<label for="date_range">Specified Date</label>
+		<br>
+		<p class="text1">Please enter the specified date </p>
+		<input type="date" id="spec_start" name="spec_start" required/> 
+		</div>  
+		<br>  
+		<button type="submit" class="submit1">Save</button> 
+		<button type="reset" class="submit1">Clear</button>  
+</form>
+
+
+<br>  <br>  
+<form action="{{url_for('intern')}}" method="post"> 
+<div> 
+		<label for="intern"><h3>Intern</h3></label>
+		<br>
+		<p class="text1">View the interns who treated the most patients</p>
+		<button type="submit" class="submit1">Get Interns</button> 
+</form>
+
+{% endblock %}

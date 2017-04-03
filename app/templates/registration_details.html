@@ -5,7 +5,8 @@
 <hr>
 <p class="text1">Please enter the patients information.</p>
 <br>
-<form action="{{url_for('registration_details')}}" method="post">  
+<form action="{{url_for('registration_details')}}" method="post"> 
+<div>  
 	<label for="fname">First Name</label><span>[Required]</span>
 		<br>
 		<p class="text1">Please paitents first name</p>
@@ -20,31 +21,33 @@
 	</div>
 	<br>
 	<div> 
-		<label for="age">Age</label><span>[Required]</span>
+		<label for="dob">Date of Birth</label><span>[Required]</span>
 		<br>
-		<p class="text1">Please enter your age name</p>
-		<input type="number" id="age" name="age" min="1" max="200" required/>   
+		<p class="text1">Please enter patients date of birth</p>
+		<input type="date" id="dob" name="dob" required/>   
 	</div>
 	<br>
  	<div>
-		<label for="biography">Biography</label><span>[Required]</span>
+		<label for="address">Address</label><span>[Required]</span>
 		<br>
-		<p class="text1">Please enter something about you.</p>
-		<textarea id="biography" name="biography" rows="4" cols="45" required></textarea>
+		<p class="text1">Please enter patients Adrress in the approriate fields below</p>
+		<label for="street">Street</label><span>[Required]</span><br>
+		<input type="text" id="street" name="street" size="35" required/> 
+		<br><br>
+		<label for="town">Town</label><span>[Required]</span><br>
+		<input type="text" id="town" name="town" size="35" required/> 
+		<br><br>
+		<label for="parish">Parish</label><span>[Required]</span><br>
+		<input type="text" id="parish" name="parish" size="35" required/> 
+	</div>
+	<br>
+	<div> 
+		<label for="age">Phone Number</label><span>[Required]</span>
+		<br>
+		<p class="text1">Please enter patients phone number</p>
+		<input type="number" id="phone_num" name="phone_num" required/>   
 	</div>
  	<br>
- 	<div>
-		<label for="file">Please upload a profile image</label><span>[Required]</span>
-		<input type="file" name="file" class="form-control" />
-	</div>
-	<br>
- 	<div>
-		<label for="gender">Please select your gender</label><span>[Required]</span><br>
-		<input type="radio" name="gender" value="male"> Male
-  		<input type="radio" name="gender" id="fgender" value="female"> Female<br>
-	</div>
-	</div>
-	<br>	
 <button type="submit" class="submit1">Register</button>
 <button type="reset" class="submit1">Clear</button>  
 </form>

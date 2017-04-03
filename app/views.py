@@ -30,19 +30,14 @@ def about():
 @login_required
 def secure_page():
     """Render a secure page on our website that only logged in users can access."""
-    return render_template('secure_page.html')
-
-@app.route('/registration-details')
-def registration_details():
-    """Render a secure page on our website that only logged in users can access."""
-    return render_template('registration_details.html')    
+    return render_template('secure_page.html')  
 
 @app.route('/doctor_view')
 def doctor_view():
     return render_template('doc_view.html');
 
 
-@app.route('/add_med_data')
+@app.route('/add_med_data', methods =["GET", "POST"])
 def doctor_add():
     """Render a secure page on our website that only logged in users can access."""
     if request.method == 'POST':
@@ -57,9 +52,9 @@ def doctor_add():
        # # profiles.set_id(userid)
        #  db.session.add(profiles)
        #  db.session.commit()
-       #  flash('New person was added ')
+        flash('New person was added ')
         return redirect(url_for('doctor_view'))
-    return redirect(url_for('doctor_add'))
+    return render_template('doctor_add.html')
 
 @app.route('/daily_updates')
 def nurse_view():
@@ -67,9 +62,95 @@ def nurse_view():
     return render_template('nurse_view.html')
 
 @app.route('/daily_updates_form')
-def nurse_view():
+def nurse_form():
     """Render a secure page on our website that only logged in users can access."""
     return render_template('daily_updates_form.html')
+
+@app.route('/registration-details')
+def registration_details():
+    """Remember to specify login required for only Secretaries."""
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        dob = request.form['dob']
+        street = request.form['street']
+        town = request.form['town']
+        parish = request.form['parish']
+        phone_num = request.form['phone_num']
+
+        patient_id = str(uuid.uuid4().fields[-1])[:8]
+       
+        flash('Paient Registerd')
+
+        patient = Patient(id=patient_id, dob=dob, first_name=first_name, last_name=last_name,
+        street=street, town=town, parish=parish, phone_num=phone_num)
+        db.session.add(patient)
+        db.session.commit()
+        return redirect(url_for('home'))
+    """Render the website's registration_details page."""
+    return render_template('registration_details.html')
+
+
+@app.route("/get_info", methods=["GET", "POST"])
+def get_info():
+    return render_template('get_info.html')
+
+@app.route("/diagnosis", methods=["GET", "POST"])
+def diagnosis():
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        diagnosis = request.form['diagnosis']
+        date_start = request.form['date_start']
+        date_end = request.form['date_end']
+
+    """Render the website's diagnosis."""
+    return render_template('get_info.html')
+
+@app.route("/allergies", methods=["GET", "POST"])
+def allergies():
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+
+    """Render the website's allergies."""
+    return render_template('get_info.html')
+
+@app.route("/medication", methods=["GET", "POST"])
+def medication():
+    if request.method == 'POST':
+        flash('yay!')
+
+    """Render the website's medication."""
+    return render_template('get_info.html')   
+
+
+@app.route("/results", methods=["GET", "POST"])
+def results():
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+
+    """Render the website's results."""
+    return render_template('get_info.html')
+
+@app.route("/nurse", methods=["GET", "POST"])
+def nurse():
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        spec_start = request.form['spec_start']
+
+    """Render the website's nurse."""
+    return render_template('get_info.html')
+
+@app.route("/intern", methods=["GET", "POST"])
+def intern():
+    if request.method == 'POST':
+        flash('yay!')
+
+    """Render the website's intern."""
+    return render_template('get_info.html') 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -97,7 +178,7 @@ def login():
 
 
 @app.route("/logout")
-#@login_required
+@login_required
 def logout():
     # Logout the user and end the session
     logout_user()

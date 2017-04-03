@@ -16,8 +16,10 @@
             <li><a href="{{ url_for('registration_details') }}">Registration</a></li>
         
           <li><a href="{{ url_for('doctor_view') }}">Doctor's Page</a></li>
+          <li><a href="{{ url_for('get_info') }}">Get Info</a></li>
           <li><a href="{{ url_for('nurse_view') }}">Nurse's Page</a></li>
             </ul>
+
 
           <ul class="nav navbar-nav navbar-right">
             {% if current_user.is_authenticated %}
